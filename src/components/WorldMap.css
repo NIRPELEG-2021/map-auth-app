@@ -1,0 +1,110 @@
+.map-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+}
+
+.map-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.map-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.username {
+  font-size: 0.95rem;
+  opacity: 0.95;
+}
+
+.logout-button {
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.logout-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.map-info {
+  background: #f8f9fa;
+  padding: 0.75rem 2rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.location-info {
+  max-width: 1400px;
+  margin: 0 auto;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.leaflet-map {
+  flex: 1;
+  z-index: 0;
+}
+
+/* Override Leaflet popup styles for better appearance */
+.leaflet-popup-content-wrapper {
+  border-radius: 8px;
+  padding: 0;
+}
+
+.leaflet-popup-content {
+  margin: 1rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .map-header {
+    padding: 1rem;
+  }
+
+  .map-info {
+    padding: 0.75rem 1rem;
+  }
+
+  .map-header h2 {
+    font-size: 1.25rem;
+  }
+
+  .user-info {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
