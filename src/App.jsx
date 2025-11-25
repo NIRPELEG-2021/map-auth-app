@@ -1,18 +1,14 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Login from './components/Login';
 import WorldMap from './components/WorldMap';
 import './App.css';
 
 function App() {
-  const [user, setUser] = useState(null);
-
-  // Check if user is already logged in (from localStorage)
-  useEffect(() => {
+  // Initialize user state from localStorage using lazy initialization
+  const [user, setUser] = useState(() => {
     const savedUser = localStorage.getItem('user');
-    if (savedUser) {
-      setUser(JSON.parse(savedUser));
-    }
-  }, []);
+    return savedUser ? JSON.parse(savedUser) : null;
+  });
 
   const handleLogin = (userData) => {
     setUser(userData);
